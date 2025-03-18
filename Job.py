@@ -113,6 +113,3 @@ else:
     .execute())
 
 # COMMAND ----------
-
-# MAGIC %sql
-# MAGIC select * from main.renewable_energy.summary_data
