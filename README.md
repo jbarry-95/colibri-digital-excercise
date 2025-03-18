@@ -18,5 +18,7 @@ The merge operation simply checks turbine ID and timestamp as the ID and if does
 The DLT task then has 3 materialized views defined.
 
 The first view is for cleaning and applying expectations on the raw tables and then unioning all 3 tables into one. The expectation rules defined check for any nulls in any column and if there is a null then that row is dropped.
+
 The second view calculates the min, max, std_dev and avg power output over a 24-hour window.
+
 The third view joins the second summary_data view with the first clean_data view and then creates a new column to calculate if the power_output field is outside 2 standard deviations from the mean.
