@@ -10,7 +10,8 @@ So your databricks workflow would look like
 |            |           |            |
 --------------           --------------
 
-I went with this approach due to DLT not being able to natively or simply handly files that get updated.
+I went with this approach due to DLT not being able to natively or simply handle files that get updated.
+
 We start with a job task for the initial load which reads the csv files and writes them to separate tables per file. We perform a merge on the 3 separate delta tables per file on each run after the first intial load which writes directly to table.
 The merge operation simply checks turbine ID and timestamp as the ID and if doesn't exist in the delta table inserts.
 
